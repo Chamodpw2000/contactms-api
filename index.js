@@ -16,7 +16,7 @@ app.use(cors({
 }))
 dotenv.config({path: "./config/.env"})
 
-app.use("/contactmsyt",Router)
+app.use("/contactms",Router)
 
 app.listen(process.env.PORT, () => {
   console.log('Server is listening on port 3000')
