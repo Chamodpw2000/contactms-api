@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import './config/db.js'
 import cors from 'cors'
 import {Router} from './routes/routes.js'
+import { trusted } from 'mongoose'
 
 
 
@@ -12,7 +13,7 @@ app.use(express.json())
 app.use(cors({
   origin: 'https://contactms-client-seven.vercel.app',
   methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
+  credentials: trusted,
 }))
 dotenv.config({path: "./config/.env"})
 
